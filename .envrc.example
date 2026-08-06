@@ -1,0 +1,19 @@
+# Copy to `.envrc`, fill in the real values, then `direnv allow` (or `source .envrc`).
+# `.envrc` is gitignored; this example is what ships. Never put a real secret in this file.
+#
+# This library needs no credentials to BUILD — its tests run against a stub token endpoint and make
+# no network calls. These are the variables a CONSUMING application sets, listed here so the
+# properties this library binds are visible in one place.
+
+# The client secret the consuming app presents to Inkan. Supplied from the environment, never the
+# repository; the library rejects a blank value at startup rather than trying it.
+export SEKISHO_CLIENT_SECRET="replace-me-with-the-real-secret"
+
+# Inkan's OAuth2 token endpoint, and the identity to present.
+export SEKISHO_CLIENT_TOKEN_URI="http://localhost:9000/oauth2/token"
+export SEKISHO_CLIENT_ID="your-client-id"
+export SEKISHO_CLIENT_SCOPE="models.invoke"
+
+# How long one model call may take. Minutes, not seconds: a cold self-hosted model loads its weights
+# before answering.
+export SEKISHO_TIMEOUT="5m"

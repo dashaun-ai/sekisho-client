@@ -1,0 +1,14 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties.bak
+
+# Local environment. .envrc holds real credentials and must never be committed;
+# .envrc.example is the version that ships.
+.envrc
+.direnv/
+
+.idea/
+*.iml
+.vscode/
+.DS_Store
